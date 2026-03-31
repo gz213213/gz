@@ -1,0 +1,55 @@
+<!--
+  稳定版导航树：
+  1) 将重规划频率降低到 0.5Hz，避免长距离时持续重规划引发控制抖动。
+  2) 规划后优先 SmoothPath；若平滑失败则回退原始路径，避免整单失败。
+  3) FollowPath 失败先做局部恢复（清图 + 后退）再旋转，减少贴墙越转越卡。
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="8" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithModerateReplanning">
+        <RateController hz="0.5">
+          <RecoveryNode number_of_retries="2" name="PlanAndSmoothPath">
+            <Fallback name="PlanWithSmoothingFallback">
+              <Sequence name="PlanAndSmoothPathSequence">
+                <ComputePathToPose goal="{goal}" path="{raw_path}" planner_id="GridBased"/>
+                <SmoothPath
+                  unsmoothed_path="{raw_path}"
+                  smoothed_path="{path}"
+                  smoother_id="simple_smoother"
+                  max_smoothing_duration="2.0"
+                  check_for_collisions="true"/>
+              </Sequence>
+              <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+            </Fallback>
+            <ClearEntireCostmap
+              name="ClearGlobalCostmap-Context"
+              service_name="global_costmap/clear_entirely_global_costmap"/>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="2" name="FollowPath">
+          <FollowPath path="{path}" controller_id="FollowPath"/>
+          <ClearEntireCostmap
+            name="ClearLocalCostmap-Context"
+            service_name="local_costmap/clear_entirely_local_costmap"/>
+        </RecoveryNode>
+      </PipelineSequence>
+      <ReactiveFallback name="RecoveryFallback">
+        <GoalUpdated/>
+        <RoundRobin name="RecoveryActions">
+          <Sequence name="ClearingActions">
+            <ClearEntireCostmap
+              name="ClearLocalCostmap-Subtree"
+              service_name="local_costmap/clear_entirely_local_costmap"/>
+            <ClearEntireCostmap
+              name="ClearGlobalCostmap-Subtree"
+              service_name="global_costmap/clear_entirely_global_costmap"/>
+          </Sequence>
+          <BackUp name="BackUpRecovery" backup_dist="0.20" backup_speed="0.05"/>
+          <Wait name="WaitRecovery" wait_duration="2"/>
+          <Spin name="SpinRecovery" spin_dist="1.0"/>
+        </RoundRobin>
+      </ReactiveFallback>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>
