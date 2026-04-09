@@ -1,0 +1,2 @@
+planner_name,samples,success_count,success_rate_pct,stuck_count,stuck_rate_pct,avg_time_all_s,avg_time_success_s,avg_recovery_count,avg_wall_hugging_level,wall_hugging_samples
+SmacPlanner2D,10,10,100.00,0,0.00,34.126,34.126,0.000,-,0

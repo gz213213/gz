@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'init_robot_pose=fishbot_application.init_robot_pose:main',
+            'planner_benchmark=fishbot_application.planner_benchmark:main',
+            'planner_benchmark_summary=fishbot_application.planner_benchmark_summary:main',
         ],
     },
 )

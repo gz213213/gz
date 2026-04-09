@@ -1,0 +1,56 @@
+# 手动对比测试的目标点清单（map 坐标系）
+# 使用方法：在 RViz 的 2D Goal Pose 中按下面 goal_id 顺序设置目标。
+# 注意：若某个点落在障碍或不可达区域，请在该场景微调坐标后继续，保持三组算法使用同一套点即可。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: long_corridor_forward
+      x: 2.00
+      y: 2.00
+      yaw_rad: 0.00
+    - goal_id: G02
+      scenario: long_corridor_reverse
+      x: 0.20
+      y: 2.00
+      yaw_rad: 3.14
+    - goal_id: G03
+      scenario: corner_entry
+      x: 1.30
+      y: 1.10
+      yaw_rad: 1.57
+    - goal_id: G04
+      scenario: corner_exit
+      x: 1.30
+      y: 2.80
+      yaw_rad: -1.57
+    - goal_id: G05
+      scenario: narrow_pass_left
+      x: 0.80
+      y: 1.60
+      yaw_rad: 0.00
+    - goal_id: G06
+      scenario: narrow_pass_right
+      x: 1.80
+      y: 1.60
+      yaw_rad: 3.14
+    - goal_id: G07
+      scenario: near_wall_goal
+      x: 2.40
+      y: 1.30
+      yaw_rad: 0.00
+    - goal_id: G08
+      scenario: S_curve_entry
+      x: 0.40
+      y: 0.90
+      yaw_rad: 0.78
+    - goal_id: G09
+      scenario: S_curve_exit
+      x: 2.60
+      y: 2.60
+      yaw_rad: -0.78
+    - goal_id: G10
+      scenario: final_precision_goal
+      x: 1.00
+      y: 2.20
+      yaw_rad: 1.57

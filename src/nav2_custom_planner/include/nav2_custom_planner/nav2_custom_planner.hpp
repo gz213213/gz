@@ -59,10 +59,23 @@ private:
   bool allow_corner_cutting_;
   // 代价值阈值：>= 阈值视为不可通行
   int lethal_cost_threshold_;
-  // 障碍代价惩罚权重：越大越倾向走低代价中心区域
+  // 兼容旧参数（已弃用）：障碍代价惩罚权重。
   double obstacle_cost_weight_;
   // 路径平滑时的安全代价上限：>= 该值则禁止直连，避免贴墙“抹直”
   int smoothing_max_cost_;
+
+  // 自适应总代价参数
+  double eps_;
+  double lambda_c_min_;
+  double lambda_c_max_;
+  double lambda_m_min_;
+  double lambda_m_max_;
+  double lambda_t_min_;
+  double lambda_t_max_;
+  double sigma_c_;
+  double sigma_m_;
+  double sigma_t_;
+  double local_width_scale_;
 };
 
 } // namespace nav2_custom_planner

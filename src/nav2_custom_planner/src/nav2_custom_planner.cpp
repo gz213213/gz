@@ -5,6 +5,7 @@
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 #include <limits>
 #include <queue>
 #include <utility>
@@ -22,7 +23,7 @@ namespace
 {
 struct OpenNode
 {
-  size_t index;
+  size_t state_index;
   double f;
   double g;
 };
@@ -43,6 +44,25 @@ constexpr double kDiagonalCost = 1.41421356237;
 constexpr std::array<double, 8> kMoveCost{
   {kDiagonalCost, 1.0, kDiagonalCost, 1.0, 1.0, kDiagonalCost, 1.0, kDiagonalCost}};
 
+constexpr size_t kDirectionCount = 8;
+constexpr size_t kUnknownDirection = 8;
+constexpr size_t kStateDirectionCount = 9;
+
+struct AdaptiveCostParams
+{
+  double eps;
+  double lambda_c_min;
+  double lambda_c_max;
+  double lambda_m_min;
+  double lambda_m_max;
+  double lambda_t_min;
+  double lambda_t_max;
+  double sigma_c;
+  double sigma_m;
+  double sigma_t;
+  double local_width_scale;
+};
+
 inline size_t toIndex(unsigned int x, unsigned int y, unsigned int width)
 {
   return static_cast<size_t>(y) * width + x;
@@ -51,6 +71,21 @@ inline size_t toIndex(unsigned int x, unsigned int y, unsigned int width)
 inline GridPoint toCell(size_t index, unsigned int width)
 {
   return {static_cast<unsigned int>(index % width), static_cast<unsigned int>(index / width)};
+}
+
+inline size_t toStateIndex(size_t cell_index, size_t direction_index)
+{
+  return cell_index * kStateDirectionCount + direction_index;
+}
+
+inline size_t stateToCellIndex(size_t state_index)
+{
+  return state_index / kStateDirectionCount;
+}
+
+inline size_t stateToDirection(size_t state_index)
+{
+  return state_index % kStateDirectionCount;
 }
 
 inline bool inBounds(int x, int y, unsigned int width, unsigned int height)
@@ -106,15 +141,117 @@ bool canTraverseStep(
          isCellTraversable(costmap, side2_x, side2_y, allow_unknown, lethal_cost_threshold);
 }
 
+std::vector<double> buildObstacleDistanceField(
+  nav2_costmap_2d::Costmap2D * costmap, unsigned int width, unsigned int height, bool allow_unknown,
+  int lethal_cost_threshold)
+{
+  const size_t cell_count = static_cast<size_t>(width) * height;
+  std::vector<double> distance_field(cell_count, std::numeric_limits<double>::infinity());
+
+  using DistanceNode = std::pair<double, size_t>;
+  std::priority_queue<DistanceNode, std::vector<DistanceNode>, std::greater<DistanceNode>> open_set;
+
+  for (unsigned int y = 0; y < height; ++y) {
+    for (unsigned int x = 0; x < width; ++x) {
+      if (!isCellTraversable(costmap, x, y, allow_unknown, lethal_cost_threshold)) {
+        const size_t idx = toIndex(x, y, width);
+        distance_field[idx] = 0.0;
+        open_set.emplace(0.0, idx);
+      }
+    }
+  }
+
+  while (!open_set.empty()) {
+    const auto current = open_set.top();
+    open_set.pop();
+
+    const double current_dist = current.first;
+    const size_t current_idx = current.second;
+    if (current_dist > distance_field[current_idx]) {
+      continue;
+    }
+
+    const GridPoint cell = toCell(current_idx, width);
+    const unsigned int cx = cell.first;
+    const unsigned int cy = cell.second;
+
+    for (size_t dir = 0; dir < kDirectionCount; ++dir) {
+      const int nx = static_cast<int>(cx) + kDx[dir];
+      const int ny = static_cast<int>(cy) + kDy[dir];
+      if (!inBounds(nx, ny, width, height)) {
+        continue;
+      }
+
+      const auto ux = static_cast<unsigned int>(nx);
+      const auto uy = static_cast<unsigned int>(ny);
+      const size_t neighbor_idx = toIndex(ux, uy, width);
+      const double next_dist = current_dist + kMoveCost[dir];
+
+      if (next_dist < distance_field[neighbor_idx]) {
+        distance_field[neighbor_idx] = next_dist;
+        open_set.emplace(next_dist, neighbor_idx);
+      }
+    }
+  }
+
+  return distance_field;
+}
+
+inline double getObstacleDistance(
+  const std::vector<double> & distance_field, unsigned int x, unsigned int y, unsigned int width)
+{
+  return distance_field[toIndex(x, y, width)];
+}
+
+double computeTurnAngle(size_t previous_dir, size_t current_dir)
+{
+  if (previous_dir >= kDirectionCount || current_dir >= kDirectionCount) {
+    return 0.0;
+  }
+
+  const double previous_yaw = std::atan2(
+    static_cast<double>(kDy[previous_dir]), static_cast<double>(kDx[previous_dir]));
+  const double current_yaw = std::atan2(
+    static_cast<double>(kDy[current_dir]), static_cast<double>(kDx[current_dir]));
+  const double delta = std::atan2(
+    std::sin(current_yaw - previous_yaw), std::cos(current_yaw - previous_yaw));
+  return std::abs(delta);
+}
+
+double computeTotalCost(
+  double obstacle_distance, double local_width, double turn_angle, const AdaptiveCostParams & params)
+{
+  const double d = std::max(0.0, obstacle_distance);
+  const double w = std::max(0.0, local_width);
+  const double theta = std::max(0.0, turn_angle);
+
+  // 你给定的总代价模型：清障项 + 中轴项 + 转向项。
+  const double c_clear = 1.0 / (d + params.eps);
+  const double c_middle = 1.0 / (d + params.eps);
+  const double c_turn = std::abs(theta);
+
+  const double lambda_c = params.lambda_c_min +
+                          (params.lambda_c_max - params.lambda_c_min) *
+                            std::exp(-d / params.sigma_c);
+  const double lambda_m = params.lambda_m_min +
+                          (params.lambda_m_max - params.lambda_m_min) *
+                            std::exp(-w / params.sigma_m);
+  const double lambda_t = params.lambda_t_min +
+                          (params.lambda_t_max - params.lambda_t_min) *
+                            (theta / (theta + params.sigma_t));
+
+  return lambda_c * c_clear + lambda_m * c_middle + lambda_t * c_turn;
+}
+
 std::vector<GridPoint> reconstructPath(
-  const std::vector<int64_t> & came_from, size_t start_index, size_t goal_index, unsigned int width)
+  const std::vector<int64_t> & came_from, size_t start_state, size_t goal_state, unsigned int width)
 {
   std::vector<GridPoint> path;
-  size_t current = goal_index;
+  size_t current = goal_state;
 
   while (true) {
-    path.push_back(toCell(current, width));
-    if (current == start_index) {
+    path.push_back(toCell(stateToCellIndex(current), width));
+    if (current == start_state) {
       break;
     }
     if (came_from[current] < 0) {
@@ -295,6 +432,31 @@ void CustomPlanner::configure(
   nav2_util::declare_parameter_if_not_declared(
     node_, name_ + ".smoothing_max_cost", rclcpp::ParameterValue(190));
 
+  node_->get_parameter(name_ + ".obstacle_cost_weight", obstacle_cost_weight_);
+
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".eps", rclcpp::ParameterValue(1.0e-3));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_c_min", rclcpp::ParameterValue(0.2));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_c_max", rclcpp::ParameterValue(1.2));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_m_min", rclcpp::ParameterValue(0.1));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_m_max", rclcpp::ParameterValue(obstacle_cost_weight_));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_t_min", rclcpp::ParameterValue(0.05));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".lambda_t_max", rclcpp::ParameterValue(0.8));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".sigma_c", rclcpp::ParameterValue(4.0));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".sigma_m", rclcpp::ParameterValue(8.0));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".sigma_t", rclcpp::ParameterValue(0.8));
+  nav2_util::declare_parameter_if_not_declared(
+    node_, name_ + ".local_width_scale", rclcpp::ParameterValue(2.0));
+
   node_->get_parameter(name_ + ".interpolation_resolution", interpolation_resolution_);
   node_->get_parameter(name_ + ".use_manhattan_distance", use_manhattan_distance_);
   node_->get_parameter(name_ + ".enable_path_smoothing", enable_path_smoothing_);
@@ -305,9 +467,37 @@ void CustomPlanner::configure(
   node_->get_parameter(name_ + ".obstacle_cost_weight", obstacle_cost_weight_);
   node_->get_parameter(name_ + ".smoothing_max_cost", smoothing_max_cost_);
 
+  node_->get_parameter(name_ + ".eps", eps_);
+  node_->get_parameter(name_ + ".lambda_c_min", lambda_c_min_);
+  node_->get_parameter(name_ + ".lambda_c_max", lambda_c_max_);
+  node_->get_parameter(name_ + ".lambda_m_min", lambda_m_min_);
+  node_->get_parameter(name_ + ".lambda_m_max", lambda_m_max_);
+  node_->get_parameter(name_ + ".lambda_t_min", lambda_t_min_);
+  node_->get_parameter(name_ + ".lambda_t_max", lambda_t_max_);
+  node_->get_parameter(name_ + ".sigma_c", sigma_c_);
+  node_->get_parameter(name_ + ".sigma_m", sigma_m_);
+  node_->get_parameter(name_ + ".sigma_t", sigma_t_);
+  node_->get_parameter(name_ + ".local_width_scale", local_width_scale_);
+
   lethal_cost_threshold_ = std::max(1, std::min(lethal_cost_threshold_, 255));
   smoothing_max_cost_ = std::max(1, std::min(smoothing_max_cost_, lethal_cost_threshold_));
   obstacle_cost_weight_ = std::max(0.0, obstacle_cost_weight_);
+
+  eps_ = std::max(1.0e-6, eps_);
+  sigma_c_ = std::max(1.0e-6, sigma_c_);
+  sigma_m_ = std::max(1.0e-6, sigma_m_);
+  sigma_t_ = std::max(1.0e-6, sigma_t_);
+  local_width_scale_ = std::max(0.0, local_width_scale_);
+
+  if (lambda_c_max_ < lambda_c_min_) {
+    std::swap(lambda_c_max_, lambda_c_min_);
+  }
+  if (lambda_m_max_ < lambda_m_min_) {
+    std::swap(lambda_m_max_, lambda_m_min_);
+  }
+  if (lambda_t_max_ < lambda_t_min_) {
+    std::swap(lambda_t_max_, lambda_t_min_);
+  }
 }
 
 void CustomPlanner::cleanup()
@@ -360,19 +550,30 @@ nav_msgs::msg::Path CustomPlanner::createPlan(
   const unsigned int width = costmap_->getSizeInCellsX();
   const unsigned int height = costmap_->getSizeInCellsY();
   const size_t cell_count = static_cast<size_t>(width) * height;
-  const size_t start_index = toIndex(start_x, start_y, width);
-  const size_t goal_index = toIndex(goal_x, goal_y, width);
+  const size_t state_count = cell_count * kStateDirectionCount;
 
-  std::vector<double> g_score(cell_count, std::numeric_limits<double>::infinity());
-  std::vector<int64_t> came_from(cell_count, -1);
-  std::vector<bool> closed(cell_count, false);
+  const size_t start_cell_index = toIndex(start_x, start_y, width);
+  const size_t goal_cell_index = toIndex(goal_x, goal_y, width);
+  const size_t start_state_index = toStateIndex(start_cell_index, kUnknownDirection);
+
+  const auto distance_field =
+    buildObstacleDistanceField(costmap_, width, height, allow_unknown_, lethal_cost_threshold_);
+
+  AdaptiveCostParams params{
+    eps_, lambda_c_min_, lambda_c_max_, lambda_m_min_, lambda_m_max_,
+    lambda_t_min_, lambda_t_max_, sigma_c_, sigma_m_, sigma_t_, local_width_scale_};
+
+  std::vector<double> g_score(state_count, std::numeric_limits<double>::infinity());
+  std::vector<int64_t> came_from(state_count, -1);
+  std::vector<bool> closed(state_count, false);
   std::priority_queue<OpenNode, std::vector<OpenNode>, CompareOpenNode> open_set;
 
-  g_score[start_index] = 0.0;
+  g_score[start_state_index] = 0.0;
   open_set.push(
-    {start_index, heuristic(start_x, start_y, goal_x, goal_y, use_manhattan_distance_), 0.0});
+    {start_state_index, heuristic(start_x, start_y, goal_x, goal_y, use_manhattan_distance_), 0.0});
 
   bool goal_reached = false;
+  size_t goal_state_index = std::numeric_limits<size_t>::max();
   int search_iterations = 0;
 
   // A* 主循环：每次从 open_set 取 f 最小节点扩展，直到到达目标或超出限制。
@@ -380,16 +581,19 @@ nav_msgs::msg::Path CustomPlanner::createPlan(
     const OpenNode current = open_set.top();
     open_set.pop();
 
-    if (current.g > g_score[current.index]) {
+    if (current.g > g_score[current.state_index]) {
       continue;
     }
-    if (closed[current.index]) {
+    if (closed[current.state_index]) {
       continue;
     }
-    closed[current.index] = true;
+    closed[current.state_index] = true;
 
-    if (current.index == goal_index) {
+    const size_t current_cell_index = stateToCellIndex(current.state_index);
+    const size_t current_dir = stateToDirection(current.state_index);
+    if (current_cell_index == goal_cell_index) {
       goal_reached = true;
+      goal_state_index = current.state_index;
       break;
     }
 
@@ -397,10 +601,10 @@ nav_msgs::msg::Path CustomPlanner::createPlan(
       throw nav2_core::PlannerException("A* 搜索超过最大迭代次数，终止规划");
     }
 
-    const GridPoint current_cell = toCell(current.index, width);
+    const GridPoint current_cell = toCell(current_cell_index, width);
     const unsigned int cx = current_cell.first;
     const unsigned int cy = current_cell.second;
-    for (size_t dir = 0; dir < kDx.size(); ++dir) {
+    for (size_t dir = 0; dir < kDirectionCount; ++dir) {
       const int nx = static_cast<int>(cx) + kDx[dir];
       const int ny = static_cast<int>(cy) + kDy[dir];
 
@@ -417,26 +621,23 @@ nav_msgs::msg::Path CustomPlanner::createPlan(
         continue;
       }
 
-      const size_t neighbor_index = toIndex(ux, uy, width);
-      if (closed[neighbor_index]) {
+      const size_t neighbor_cell_index = toIndex(ux, uy, width);
+      const size_t neighbor_state_index = toStateIndex(neighbor_cell_index, dir);
+      if (closed[neighbor_state_index]) {
         continue;
       }
 
-      // 将代价地图代价纳入 g 值，鼓励路径远离高代价区域（贴墙和窄缝更少）。
-      const unsigned char cell_cost = costmap_->getCost(ux, uy);
-      const double normalized_penalty =
-        static_cast<double>(std::min<int>(cell_cost, lethal_cost_threshold_ - 1)) /
-        static_cast<double>(lethal_cost_threshold_);
-      // 二次惩罚比线性惩罚更偏好通道中轴，能显著降低“贴墙走”的概率。
-      const double weighted_penalty =
-        obstacle_cost_weight_ * normalized_penalty * normalized_penalty;
-      const double tentative_g = g_score[current.index] + kMoveCost[dir] + weighted_penalty;
+      const double d = getObstacleDistance(distance_field, ux, uy, width);
+      const double w = local_width_scale_ * d;
+      const double theta = computeTurnAngle(current_dir, dir);
+      const double adaptive_cost = computeTotalCost(d, w, theta, params);
+      const double tentative_g = g_score[current.state_index] + kMoveCost[dir] + adaptive_cost;
 
-      if (tentative_g < g_score[neighbor_index]) {
-        came_from[neighbor_index] = static_cast<int64_t>(current.index);
-        g_score[neighbor_index] = tentative_g;
+      if (tentative_g < g_score[neighbor_state_index]) {
+        came_from[neighbor_state_index] = static_cast<int64_t>(current.state_index);
+        g_score[neighbor_state_index] = tentative_g;
         const double h = heuristic(ux, uy, goal_x, goal_y, use_manhattan_distance_);
-        open_set.push({neighbor_index, tentative_g + h, tentative_g});
+        open_set.push({neighbor_state_index, tentative_g + h, tentative_g});
       }
     }
   }
@@ -447,7 +648,8 @@ nav_msgs::msg::Path CustomPlanner::createPlan(
             std::to_string(goal.pose.position.y) + ")");
   }
 
-  std::vector<GridPoint> cell_path = reconstructPath(came_from, start_index, goal_index, width);
+  std::vector<GridPoint> cell_path = reconstructPath(
+    came_from, start_state_index, goal_state_index, width);
   if (cell_path.empty()) {
     throw nav2_core::PlannerException("A* 回溯失败，路径为空");
   }

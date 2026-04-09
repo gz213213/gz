@@ -1,0 +1,58 @@
+# 地图对应：open_clutter_01
+# 坐标系：map
+# 约定：
+# - 当 auto_spawn_from_goals=true 时，G01 作为机器人默认出生点。
+# - x/y 单位为米（m），yaw_rad 单位为弧度（rad）。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: clutter_sw
+      x: -10.0
+      y: -7.5
+      yaw_rad: 0.0
+    - goal_id: G02
+      scenario: clutter_west_mid
+      x: -8.0
+      y: -3.5
+      yaw_rad: 0.5
+    - goal_id: G03
+      scenario: clutter_south_mid
+      x: -3.0
+      y: -6.0
+      yaw_rad: 0.0
+    - goal_id: G04
+      scenario: center_lane_entry
+      x: -1.0
+      y: -1.5
+      yaw_rad: 0.0
+    - goal_id: G05
+      scenario: center_lane_mid
+      x: 0.0
+      y: 0.0
+      yaw_rad: 1.57
+    - goal_id: G06
+      scenario: center_lane_exit
+      x: 1.0
+      y: 1.5
+      yaw_rad: 0.0
+    - goal_id: G07
+      scenario: clutter_north_mid
+      x: -2.0
+      y: 6.0
+      yaw_rad: 3.14
+    - goal_id: G08
+      scenario: clutter_east_mid
+      x: 7.5
+      y: 3.0
+      yaw_rad: -0.5
+    - goal_id: G09
+      scenario: clutter_ne
+      x: 9.5
+      y: 7.0
+      yaw_rad: -1.57
+    - goal_id: G10
+      scenario: clutter_se
+      x: 9.0
+      y: -7.0
+      yaw_rad: 3.14

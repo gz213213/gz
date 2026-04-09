@@ -1,0 +1,11 @@
+planner_name,run_id,goal_id,success,time_to_goal_s,stuck_or_not,wall_hugging_level,recovery_count,note
+SmacPlanner2D,1,G01,1,49.253,0,,0,ok
+SmacPlanner2D,1,G02,1,35.408,0,,0,ok
+SmacPlanner2D,1,G03,1,26.01,0,,0,ok
+SmacPlanner2D,1,G04,1,30.21,0,,0,ok
+SmacPlanner2D,1,G05,1,27.625,0,,0,ok
+SmacPlanner2D,1,G06,1,22.618,0,,0,ok
+SmacPlanner2D,1,G07,1,18.028,0,,0,ok
+SmacPlanner2D,1,G08,1,38.642,0,,0,ok
+SmacPlanner2D,1,G09,1,54.855,0,,0,ok
+SmacPlanner2D,1,G10,1,38.614,0,,0,ok

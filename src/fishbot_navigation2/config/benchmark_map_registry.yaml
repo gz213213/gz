@@ -1,0 +1,46 @@
+benchmark_maps:
+  - map_id: warehouse_aisles_01
+    map_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/warehouse_aisles_01.yaml
+    world_file: /home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/warehouse_aisles_01.world
+    goals_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_warehouse.yaml
+    env_tags: [warehouse, narrow_corridors, long_aisles]
+    difficulty: medium
+    focus_metrics: [success_rate, min_clearance, wall_hugging_level, recovery_count]
+    note: "货架型狭窄通道，适合检验中轴偏置与贴墙风险。"
+
+  - map_id: office_rooms_01
+    map_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/office_rooms_01.yaml
+    world_file: /home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/office_rooms_01.world
+    goals_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_office.yaml
+    env_tags: [office, rooms, doorways, corners]
+    difficulty: medium
+    focus_metrics: [success_rate, turn_count, avg_time_success_s]
+    note: "多房间+门洞+拐角，适合检验转向代价项。"
+
+  - map_id: maze_zigzag_01
+    map_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/maze_zigzag_01.yaml
+    world_file: /home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/maze_zigzag_01.world
+    goals_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_maze.yaml
+    env_tags: [maze, zigzag, dead_ends]
+    difficulty: hard
+    focus_metrics: [success_rate, stuck_rate_pct, recovery_count, avg_time_success_s]
+    note: "锯齿迷宫路径，适合检验算法鲁棒性与恢复行为。"
+
+  - map_id: open_clutter_01
+    map_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/open_clutter_01.yaml
+    world_file: /home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/open_clutter_01.world
+    goals_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_clutter.yaml
+    env_tags: [open_space, clutter, mixed]
+    difficulty: medium
+    focus_metrics: [avg_time_success_s, path_length, min_clearance]
+    note: "开阔区+离散障碍，适合检验效率与安全距离折中。"
+
+  - map_id: turtlebot3_world
+    map_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/turtlebot3_world.yaml
+    world_file: /home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/turtlebot3_world.world
+    goals_yaml: /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_tb3_world.yaml
+    env_tags: [nav2_reference, mixed_layout]
+    difficulty: medium
+    source: /opt/ros/humble/share/nav2_bringup/maps/turtlebot3_world.yaml
+    focus_metrics: [success_rate, avg_time_success_s, recovery_count]
+    note: "来自 nav2_bringup 的参考地图。"

@@ -1,0 +1,3063 @@
+<sdf version='1.7'>
+  <world name='turtlebot3_world'>
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+    <model name='benchmark_obstacles'>
+      <static>true</static>
+      <link name='obstacles_link'>
+        <collision name='obs_0001_collision'>
+          <pose>-0.450 2.575 0.500 0 0 0</pose>
+          <geometry><box><size>1.300 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0001_visual'>
+          <pose>-0.450 2.575 0.500 0 0 0</pose>
+          <geometry><box><size>1.300 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0002_collision'>
+          <pose>0.300 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0002_visual'>
+          <pose>0.300 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0003_collision'>
+          <pose>0.475 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0003_visual'>
+          <pose>0.475 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0004_collision'>
+          <pose>0.575 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0004_visual'>
+          <pose>0.575 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0005_collision'>
+          <pose>0.775 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0005_visual'>
+          <pose>0.775 2.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0006_collision'>
+          <pose>-1.075 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0006_visual'>
+          <pose>-1.075 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0007_collision'>
+          <pose>-0.350 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>1.200 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0007_visual'>
+          <pose>-0.350 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>1.200 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0008_collision'>
+          <pose>0.400 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0008_visual'>
+          <pose>0.400 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0009_collision'>
+          <pose>0.525 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0009_visual'>
+          <pose>0.525 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0010_collision'>
+          <pose>0.675 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0010_visual'>
+          <pose>0.675 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0011_collision'>
+          <pose>1.000 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0011_visual'>
+          <pose>1.000 2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0012_collision'>
+          <pose>-1.100 2.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0012_visual'>
+          <pose>-1.100 2.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0013_collision'>
+          <pose>1.175 2.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0013_visual'>
+          <pose>1.175 2.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0014_collision'>
+          <pose>1.225 2.400 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0014_visual'>
+          <pose>1.225 2.400 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0015_collision'>
+          <pose>-1.125 2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0015_visual'>
+          <pose>-1.125 2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0016_collision'>
+          <pose>1.275 2.325 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0016_visual'>
+          <pose>1.275 2.325 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0017_collision'>
+          <pose>-1.200 2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0017_visual'>
+          <pose>-1.200 2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0018_collision'>
+          <pose>1.325 2.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0018_visual'>
+          <pose>1.325 2.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0019_collision'>
+          <pose>-1.275 2.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0019_visual'>
+          <pose>-1.275 2.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0020_collision'>
+          <pose>-1.225 2.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0020_visual'>
+          <pose>-1.225 2.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0021_collision'>
+          <pose>1.375 2.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0021_visual'>
+          <pose>1.375 2.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0022_collision'>
+          <pose>-1.325 2.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0022_visual'>
+          <pose>-1.325 2.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0023_collision'>
+          <pose>1.425 2.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0023_visual'>
+          <pose>1.425 2.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0024_collision'>
+          <pose>-1.700 2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0024_visual'>
+          <pose>-1.700 2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0025_collision'>
+          <pose>-1.400 2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0025_visual'>
+          <pose>-1.400 2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0026_collision'>
+          <pose>-1.775 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0026_visual'>
+          <pose>-1.775 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0027_collision'>
+          <pose>-1.550 2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0027_visual'>
+          <pose>-1.550 2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0028_collision'>
+          <pose>1.475 2.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0028_visual'>
+          <pose>1.475 2.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0029_collision'>
+          <pose>1.625 2.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0029_visual'>
+          <pose>1.625 2.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0030_collision'>
+          <pose>-1.825 1.900 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0030_visual'>
+          <pose>-1.825 1.900 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0031_collision'>
+          <pose>-1.725 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0031_visual'>
+          <pose>-1.725 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0032_collision'>
+          <pose>1.550 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0032_visual'>
+          <pose>1.550 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0033_collision'>
+          <pose>1.775 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.250 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0033_visual'>
+          <pose>1.775 1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.250 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0034_collision'>
+          <pose>1.850 1.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0034_visual'>
+          <pose>1.850 1.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0035_collision'>
+          <pose>-1.875 1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0035_visual'>
+          <pose>-1.875 1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0036_collision'>
+          <pose>1.900 1.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0036_visual'>
+          <pose>1.900 1.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0037_collision'>
+          <pose>1.925 1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0037_visual'>
+          <pose>1.925 1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0038_collision'>
+          <pose>-1.925 1.700 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0038_visual'>
+          <pose>-1.925 1.700 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0039_collision'>
+          <pose>1.975 1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0039_visual'>
+          <pose>1.975 1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0040_collision'>
+          <pose>-1.975 1.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0040_visual'>
+          <pose>-1.975 1.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0041_collision'>
+          <pose>2.025 1.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0041_visual'>
+          <pose>2.025 1.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0042_collision'>
+          <pose>-2.025 1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0042_visual'>
+          <pose>-2.025 1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0043_collision'>
+          <pose>2.075 1.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0043_visual'>
+          <pose>2.075 1.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0044_collision'>
+          <pose>-2.075 1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0044_visual'>
+          <pose>-2.075 1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0045_collision'>
+          <pose>2.125 1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0045_visual'>
+          <pose>2.125 1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0046_collision'>
+          <pose>-2.125 1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0046_visual'>
+          <pose>-2.125 1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0047_collision'>
+          <pose>2.175 1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0047_visual'>
+          <pose>2.175 1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0048_collision'>
+          <pose>-2.175 1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0048_visual'>
+          <pose>-2.175 1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0049_collision'>
+          <pose>2.225 1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0049_visual'>
+          <pose>2.225 1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0050_collision'>
+          <pose>-2.225 1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0050_visual'>
+          <pose>-2.225 1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0051_collision'>
+          <pose>-1.025 1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0051_visual'>
+          <pose>-1.025 1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0052_collision'>
+          <pose>-1.150 1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0052_visual'>
+          <pose>-1.150 1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0053_collision'>
+          <pose>-0.925 1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0053_visual'>
+          <pose>-0.925 1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0054_collision'>
+          <pose>0.050 1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0054_visual'>
+          <pose>0.050 1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0055_collision'>
+          <pose>1.125 1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0055_visual'>
+          <pose>1.125 1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0056_collision'>
+          <pose>2.275 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0056_visual'>
+          <pose>2.275 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0057_collision'>
+          <pose>-2.275 1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0057_visual'>
+          <pose>-2.275 1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0058_collision'>
+          <pose>-1.175 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0058_visual'>
+          <pose>-1.175 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0059_collision'>
+          <pose>-0.075 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0059_visual'>
+          <pose>-0.075 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0060_collision'>
+          <pose>0.150 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0060_visual'>
+          <pose>0.150 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0061_collision'>
+          <pose>1.025 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0061_visual'>
+          <pose>1.025 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0062_collision'>
+          <pose>1.250 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0062_visual'>
+          <pose>1.250 1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0063_collision'>
+          <pose>2.325 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0063_visual'>
+          <pose>2.325 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0064_collision'>
+          <pose>-1.225 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0064_visual'>
+          <pose>-1.225 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0065_collision'>
+          <pose>-0.875 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0065_visual'>
+          <pose>-0.875 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0066_collision'>
+          <pose>-0.100 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0066_visual'>
+          <pose>-0.100 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0067_collision'>
+          <pose>0.200 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0067_visual'>
+          <pose>0.200 1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0068_collision'>
+          <pose>1.275 1.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0068_visual'>
+          <pose>1.275 1.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0069_collision'>
+          <pose>-2.325 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0069_visual'>
+          <pose>-2.325 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0070_collision'>
+          <pose>1.325 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0070_visual'>
+          <pose>1.325 1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0071_collision'>
+          <pose>2.375 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0071_visual'>
+          <pose>2.375 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0072_collision'>
+          <pose>-2.375 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0072_visual'>
+          <pose>-2.375 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0073_collision'>
+          <pose>-1.125 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0073_visual'>
+          <pose>-1.125 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0074_collision'>
+          <pose>-0.975 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0074_visual'>
+          <pose>-0.975 1.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0075_collision'>
+          <pose>-0.025 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0075_visual'>
+          <pose>-0.025 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0076_collision'>
+          <pose>0.150 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0076_visual'>
+          <pose>0.150 1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0077_collision'>
+          <pose>1.225 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0077_visual'>
+          <pose>1.225 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0078_collision'>
+          <pose>-1.050 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0078_visual'>
+          <pose>-1.050 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0079_collision'>
+          <pose>-0.075 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0079_visual'>
+          <pose>-0.075 0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0080_collision'>
+          <pose>0.050 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0080_visual'>
+          <pose>0.050 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0081_collision'>
+          <pose>1.125 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0081_visual'>
+          <pose>1.125 0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0082_collision'>
+          <pose>2.425 0.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0082_visual'>
+          <pose>2.425 0.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0083_collision'>
+          <pose>-2.425 0.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0083_visual'>
+          <pose>-2.425 0.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0084_collision'>
+          <pose>0.125 0.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0084_visual'>
+          <pose>0.125 0.925 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0085_collision'>
+          <pose>-2.475 0.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0085_visual'>
+          <pose>-2.475 0.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0086_collision'>
+          <pose>2.475 0.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0086_visual'>
+          <pose>2.475 0.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0087_collision'>
+          <pose>2.525 0.750 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0087_visual'>
+          <pose>2.525 0.750 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0088_collision'>
+          <pose>-2.525 0.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0088_visual'>
+          <pose>-2.525 0.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0089_collision'>
+          <pose>2.575 0.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0089_visual'>
+          <pose>2.575 0.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0090_collision'>
+          <pose>-2.575 0.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0090_visual'>
+          <pose>-2.575 0.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0091_collision'>
+          <pose>-2.625 0.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0091_visual'>
+          <pose>-2.625 0.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0092_collision'>
+          <pose>2.625 0.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.350 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0092_visual'>
+          <pose>2.625 0.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.350 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0093_collision'>
+          <pose>2.675 0.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0093_visual'>
+          <pose>2.675 0.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0094_collision'>
+          <pose>-2.675 0.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0094_visual'>
+          <pose>-2.675 0.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0095_collision'>
+          <pose>-2.725 0.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0095_visual'>
+          <pose>-2.725 0.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0096_collision'>
+          <pose>2.725 0.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0096_visual'>
+          <pose>2.725 0.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0097_collision'>
+          <pose>-2.775 0.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0097_visual'>
+          <pose>-2.775 0.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0098_collision'>
+          <pose>2.575 0.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0098_visual'>
+          <pose>2.575 0.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0099_collision'>
+          <pose>-2.825 0.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0099_visual'>
+          <pose>-2.825 0.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0100_collision'>
+          <pose>2.525 0.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0100_visual'>
+          <pose>2.525 0.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0101_collision'>
+          <pose>-2.875 0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0101_visual'>
+          <pose>-2.875 0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0102_collision'>
+          <pose>-1.050 0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0102_visual'>
+          <pose>-1.050 0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0103_collision'>
+          <pose>0.025 0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0103_visual'>
+          <pose>0.025 0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0104_collision'>
+          <pose>2.475 0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0104_visual'>
+          <pose>2.475 0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0105_collision'>
+          <pose>-1.175 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0105_visual'>
+          <pose>-1.175 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0106_collision'>
+          <pose>-0.075 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0106_visual'>
+          <pose>-0.075 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.300 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0107_collision'>
+          <pose>0.125 0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0107_visual'>
+          <pose>0.125 0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0108_collision'>
+          <pose>1.100 0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0108_visual'>
+          <pose>1.100 0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0109_collision'>
+          <pose>2.425 0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0109_visual'>
+          <pose>2.425 0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0110_collision'>
+          <pose>-2.925 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0110_visual'>
+          <pose>-2.925 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0111_collision'>
+          <pose>-1.225 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0111_visual'>
+          <pose>-1.225 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0112_collision'>
+          <pose>-0.950 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0112_visual'>
+          <pose>-0.950 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0113_collision'>
+          <pose>-0.125 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0113_visual'>
+          <pose>-0.125 0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0114_collision'>
+          <pose>0.175 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0114_visual'>
+          <pose>0.175 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0115_collision'>
+          <pose>0.975 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0115_visual'>
+          <pose>0.975 0.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0116_collision'>
+          <pose>1.225 0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0116_visual'>
+          <pose>1.225 0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0117_collision'>
+          <pose>1.025 -0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0117_visual'>
+          <pose>1.025 -0.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0118_collision'>
+          <pose>1.275 -0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0118_visual'>
+          <pose>1.275 -0.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0119_collision'>
+          <pose>2.375 -0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0119_visual'>
+          <pose>2.375 -0.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0120_collision'>
+          <pose>-2.825 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0120_visual'>
+          <pose>-2.825 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0121_collision'>
+          <pose>-1.125 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0121_visual'>
+          <pose>-1.125 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0122_collision'>
+          <pose>-1.025 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0122_visual'>
+          <pose>-1.025 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0123_collision'>
+          <pose>-0.025 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0123_visual'>
+          <pose>-0.025 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0124_collision'>
+          <pose>0.125 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0124_visual'>
+          <pose>0.125 -0.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0125_collision'>
+          <pose>1.075 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0125_visual'>
+          <pose>1.075 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0126_collision'>
+          <pose>1.225 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0126_visual'>
+          <pose>1.225 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0127_collision'>
+          <pose>-1.075 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0127_visual'>
+          <pose>-1.075 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0128_collision'>
+          <pose>-0.975 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0128_visual'>
+          <pose>-0.975 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0129_collision'>
+          <pose>0.050 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0129_visual'>
+          <pose>0.050 -0.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0130_collision'>
+          <pose>1.150 -0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0130_visual'>
+          <pose>1.150 -0.150 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0131_collision'>
+          <pose>2.425 -0.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0131_visual'>
+          <pose>2.425 -0.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0132_collision'>
+          <pose>-2.775 -0.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0132_visual'>
+          <pose>-2.775 -0.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0133_collision'>
+          <pose>2.475 -0.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0133_visual'>
+          <pose>2.475 -0.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0134_collision'>
+          <pose>-2.725 -0.325 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0134_visual'>
+          <pose>-2.725 -0.325 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0135_collision'>
+          <pose>-2.675 -0.400 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0135_visual'>
+          <pose>-2.675 -0.400 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0136_collision'>
+          <pose>2.525 -0.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0136_visual'>
+          <pose>2.525 -0.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0137_collision'>
+          <pose>2.575 -0.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0137_visual'>
+          <pose>2.575 -0.450 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0138_collision'>
+          <pose>-2.625 -0.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0138_visual'>
+          <pose>-2.625 -0.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0139_collision'>
+          <pose>2.625 -0.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0139_visual'>
+          <pose>2.625 -0.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0140_collision'>
+          <pose>-2.575 -0.600 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0140_visual'>
+          <pose>-2.575 -0.600 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0141_collision'>
+          <pose>2.675 -0.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0141_visual'>
+          <pose>2.675 -0.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0142_collision'>
+          <pose>-2.525 -0.675 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0142_visual'>
+          <pose>-2.525 -0.675 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0143_collision'>
+          <pose>-2.475 -0.750 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0143_visual'>
+          <pose>-2.475 -0.750 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0144_collision'>
+          <pose>2.575 -0.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0144_visual'>
+          <pose>2.575 -0.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0145_collision'>
+          <pose>2.525 -0.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0145_visual'>
+          <pose>2.525 -0.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0146_collision'>
+          <pose>-2.425 -0.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0146_visual'>
+          <pose>-2.425 -0.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0147_collision'>
+          <pose>2.475 -0.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0147_visual'>
+          <pose>2.475 -0.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0148_collision'>
+          <pose>-2.375 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0148_visual'>
+          <pose>-2.375 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0149_collision'>
+          <pose>-2.325 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0149_visual'>
+          <pose>-2.325 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0150_collision'>
+          <pose>-1.075 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0150_visual'>
+          <pose>-1.075 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.150 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0151_collision'>
+          <pose>0.000 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0151_visual'>
+          <pose>0.000 -0.950 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0152_collision'>
+          <pose>2.425 -0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0152_visual'>
+          <pose>2.425 -0.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0153_collision'>
+          <pose>-1.200 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0153_visual'>
+          <pose>-1.200 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0154_collision'>
+          <pose>-0.975 -1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0154_visual'>
+          <pose>-0.975 -1.075 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0155_collision'>
+          <pose>-0.075 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0155_visual'>
+          <pose>-0.075 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0156_collision'>
+          <pose>0.100 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0156_visual'>
+          <pose>0.100 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0157_collision'>
+          <pose>1.100 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0157_visual'>
+          <pose>1.100 -1.000 0.500 0 0 0</pose>
+          <geometry><box><size>0.200 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0158_collision'>
+          <pose>2.375 -1.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0158_visual'>
+          <pose>2.375 -1.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0159_collision'>
+          <pose>-2.275 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0159_visual'>
+          <pose>-2.275 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0160_collision'>
+          <pose>-0.125 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0160_visual'>
+          <pose>-0.125 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0161_collision'>
+          <pose>0.975 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0161_visual'>
+          <pose>0.975 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0162_collision'>
+          <pose>1.225 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0162_visual'>
+          <pose>1.225 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.250 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0163_collision'>
+          <pose>-1.225 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0163_visual'>
+          <pose>-1.225 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0164_collision'>
+          <pose>-0.925 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0164_visual'>
+          <pose>-0.925 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0165_collision'>
+          <pose>0.150 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0165_visual'>
+          <pose>0.150 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0166_collision'>
+          <pose>1.275 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0166_visual'>
+          <pose>1.275 -1.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0167_collision'>
+          <pose>2.325 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0167_visual'>
+          <pose>2.325 -1.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0168_collision'>
+          <pose>-2.225 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0168_visual'>
+          <pose>-2.225 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0169_collision'>
+          <pose>-0.075 -1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0169_visual'>
+          <pose>-0.075 -1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0170_collision'>
+          <pose>1.025 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0170_visual'>
+          <pose>1.025 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0171_collision'>
+          <pose>2.275 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0171_visual'>
+          <pose>2.275 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0172_collision'>
+          <pose>-1.175 -1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0172_visual'>
+          <pose>-1.175 -1.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0173_collision'>
+          <pose>-1.025 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0173_visual'>
+          <pose>-1.025 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0174_collision'>
+          <pose>0.100 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0174_visual'>
+          <pose>0.100 -1.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0175_collision'>
+          <pose>-2.175 -1.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0175_visual'>
+          <pose>-2.175 -1.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0176_collision'>
+          <pose>-1.100 -1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0176_visual'>
+          <pose>-1.100 -1.225 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0177_collision'>
+          <pose>0.000 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0177_visual'>
+          <pose>0.000 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0178_collision'>
+          <pose>1.075 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0178_visual'>
+          <pose>1.075 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0179_collision'>
+          <pose>1.175 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0179_visual'>
+          <pose>1.175 -1.250 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0180_collision'>
+          <pose>2.225 -1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0180_visual'>
+          <pose>2.225 -1.300 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0181_collision'>
+          <pose>1.125 -1.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0181_visual'>
+          <pose>1.125 -1.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0182_collision'>
+          <pose>-2.125 -1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0182_visual'>
+          <pose>-2.125 -1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0183_collision'>
+          <pose>2.175 -1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0183_visual'>
+          <pose>2.175 -1.375 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0184_collision'>
+          <pose>-2.075 -1.500 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0184_visual'>
+          <pose>-2.075 -1.500 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0185_collision'>
+          <pose>2.125 -1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0185_visual'>
+          <pose>2.125 -1.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0186_collision'>
+          <pose>-2.025 -1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0186_visual'>
+          <pose>-2.025 -1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0187_collision'>
+          <pose>2.075 -1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0187_visual'>
+          <pose>2.075 -1.550 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0188_collision'>
+          <pose>-1.975 -1.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0188_visual'>
+          <pose>-1.975 -1.650 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0189_collision'>
+          <pose>2.025 -1.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0189_visual'>
+          <pose>2.025 -1.625 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0190_collision'>
+          <pose>-1.925 -1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0190_visual'>
+          <pose>-1.925 -1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0191_collision'>
+          <pose>1.975 -1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0191_visual'>
+          <pose>1.975 -1.725 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0192_collision'>
+          <pose>1.925 -1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0192_visual'>
+          <pose>1.925 -1.800 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0193_collision'>
+          <pose>-1.875 -1.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0193_visual'>
+          <pose>-1.875 -1.825 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0194_collision'>
+          <pose>-1.825 -1.900 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0194_visual'>
+          <pose>-1.825 -1.900 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0195_collision'>
+          <pose>1.875 -1.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0195_visual'>
+          <pose>1.875 -1.875 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0196_collision'>
+          <pose>-1.775 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0196_visual'>
+          <pose>-1.775 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0197_collision'>
+          <pose>1.825 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0197_visual'>
+          <pose>1.825 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0198_collision'>
+          <pose>-1.550 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0198_visual'>
+          <pose>-1.550 -1.975 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0199_collision'>
+          <pose>1.775 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0199_visual'>
+          <pose>1.775 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0200_collision'>
+          <pose>-1.725 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0200_visual'>
+          <pose>-1.725 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0201_collision'>
+          <pose>-1.475 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.250 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0201_visual'>
+          <pose>-1.475 -2.025 0.500 0 0 0</pose>
+          <geometry><box><size>0.250 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0202_collision'>
+          <pose>1.550 -2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0202_visual'>
+          <pose>1.550 -2.050 0.500 0 0 0</pose>
+          <geometry><box><size>0.400 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0203_collision'>
+          <pose>-1.350 -2.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0203_visual'>
+          <pose>-1.350 -2.100 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0204_collision'>
+          <pose>1.350 -2.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0204_visual'>
+          <pose>1.350 -2.125 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0205_collision'>
+          <pose>-1.300 -2.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0205_visual'>
+          <pose>-1.300 -2.175 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0206_collision'>
+          <pose>1.300 -2.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0206_visual'>
+          <pose>1.300 -2.200 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0207_collision'>
+          <pose>-1.275 -2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0207_visual'>
+          <pose>-1.275 -2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0208_collision'>
+          <pose>-1.225 -2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0208_visual'>
+          <pose>-1.225 -2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0209_collision'>
+          <pose>1.250 -2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0209_visual'>
+          <pose>1.250 -2.275 0.500 0 0 0</pose>
+          <geometry><box><size>0.100 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0210_collision'>
+          <pose>1.225 -2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0210_visual'>
+          <pose>1.225 -2.350 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.100 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0211_collision'>
+          <pose>-1.175 -2.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0211_visual'>
+          <pose>-1.175 -2.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0212_collision'>
+          <pose>1.175 -2.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0212_visual'>
+          <pose>1.175 -2.425 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0213_collision'>
+          <pose>-1.125 -2.500 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0213_visual'>
+          <pose>-1.125 -2.500 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.200 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0214_collision'>
+          <pose>1.125 -2.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0214_visual'>
+          <pose>1.125 -2.475 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0215_collision'>
+          <pose>-1.075 -2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0215_visual'>
+          <pose>-1.075 -2.525 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0216_collision'>
+          <pose>-0.125 -2.525 0.500 0 0 0</pose>
+          <geometry><box><size>1.850 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0216_visual'>
+          <pose>-0.125 -2.525 0.500 0 0 0</pose>
+          <geometry><box><size>1.850 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0217_collision'>
+          <pose>1.075 -2.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0217_visual'>
+          <pose>1.075 -2.575 0.500 0 0 0</pose>
+          <geometry><box><size>0.050 0.150 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <collision name='obs_0218_collision'>
+          <pose>0.025 -2.575 0.500 0 0 0</pose>
+          <geometry><box><size>2.050 0.050 1.000</size></box></geometry>
+          <surface><contact><collide_without_contact>false</collide_without_contact></contact></surface>
+        </collision>
+        <visual name='obs_0218_visual'>
+          <pose>0.025 -2.575 0.500 0 0 0</pose>
+          <geometry><box><size>2.050 0.050 1.000</size></box></geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

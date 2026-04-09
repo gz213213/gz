@@ -1,0 +1,58 @@
+# 地图对应：office_rooms_01
+# 坐标系：map
+# 约定：
+# - 当 auto_spawn_from_goals=true 时，G01 作为机器人默认出生点。
+# - x/y 单位为米（m），yaw_rad 单位为弧度（rad）。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: room_sw
+      x: -9.0
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G02
+      scenario: room_smid
+      x: -3.0
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G03
+      scenario: room_se
+      x: 9.0
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G04
+      scenario: west_middle
+      x: -9.0
+      y: -1.0
+      yaw_rad: 1.57
+    - goal_id: G05
+      scenario: center_transition
+      x: -1.0
+      y: -1.0
+      yaw_rad: 0.0
+    - goal_id: G06
+      scenario: east_middle
+      x: 9.0
+      y: -1.0
+      yaw_rad: 3.14
+    - goal_id: G07
+      scenario: west_upper
+      x: -9.0
+      y: 3.0
+      yaw_rad: 1.57
+    - goal_id: G08
+      scenario: center_upper
+      x: -1.0
+      y: 3.0
+      yaw_rad: 0.0
+    - goal_id: G09
+      scenario: east_upper
+      x: 9.0
+      y: 3.0
+      yaw_rad: 3.14
+    - goal_id: G10
+      scenario: room_ne
+      x: 9.0
+      y: 7.0
+      yaw_rad: -1.57

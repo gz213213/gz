@@ -1,0 +1,58 @@
+# 地图对应：turtlebot3_world
+# 坐标系：map
+# 约定：
+# - 当 auto_spawn_from_goals=true 时，G01 作为机器人默认出生点。
+# - x/y 单位为米（m），yaw_rad 单位为弧度（rad）。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: tb3_lower_left
+      x: -7.5
+      y: -7.5
+      yaw_rad: 0.0
+    - goal_id: G02
+      scenario: tb3_lower_mid
+      x: -2.0
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G03
+      scenario: tb3_lower_right
+      x: 6.5
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G04
+      scenario: tb3_center_left
+      x: -6.0
+      y: -1.0
+      yaw_rad: 1.57
+    - goal_id: G05
+      scenario: tb3_center
+      x: 0.0
+      y: 0.0
+      yaw_rad: 0.0
+    - goal_id: G06
+      scenario: tb3_center_right
+      x: 6.0
+      y: -1.0
+      yaw_rad: 3.14
+    - goal_id: G07
+      scenario: tb3_upper_left
+      x: -7.0
+      y: 5.5
+      yaw_rad: 1.57
+    - goal_id: G08
+      scenario: tb3_upper_mid
+      x: -1.0
+      y: 6.5
+      yaw_rad: 0.0
+    - goal_id: G09
+      scenario: tb3_upper_right
+      x: 6.5
+      y: 6.0
+      yaw_rad: -1.57
+    - goal_id: G10
+      scenario: tb3_far_corner
+      x: 8.0
+      y: 8.0
+      yaw_rad: 0.0

@@ -1,0 +1,58 @@
+# 地图对应：maze_zigzag_01
+# 坐标系：map
+# 约定：
+# - 当 auto_spawn_from_goals=true 时，G01 作为机器人默认出生点。
+# - x/y 单位为米（m），yaw_rad 单位为弧度（rad）。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: maze_entry_sw
+      x: -10.0
+      y: -7.5
+      yaw_rad: 0.0
+    - goal_id: G02
+      scenario: zigzag_1
+      x: -8.0
+      y: -5.5
+      yaw_rad: 0.7
+    - goal_id: G03
+      scenario: zigzag_2
+      x: -6.0
+      y: -3.5
+      yaw_rad: 0.7
+    - goal_id: G04
+      scenario: zigzag_3
+      x: -3.2
+      y: -1.7
+      yaw_rad: 0.0
+    - goal_id: G05
+      scenario: maze_center
+      x: -1.0
+      y: 0.5
+      yaw_rad: 0.0
+    - goal_id: G06
+      scenario: zigzag_4
+      x: 1.5
+      y: 2.0
+      yaw_rad: 0.7
+    - goal_id: G07
+      scenario: zigzag_5
+      x: 3.5
+      y: 3.5
+      yaw_rad: 0.7
+    - goal_id: G08
+      scenario: zigzag_6
+      x: 5.5
+      y: 5.0
+      yaw_rad: 0.7
+    - goal_id: G09
+      scenario: near_exit
+      x: 8.0
+      y: 6.5
+      yaw_rad: 0.0
+    - goal_id: G10
+      scenario: maze_exit_ne
+      x: 10.0
+      y: 7.5
+      yaw_rad: 0.0

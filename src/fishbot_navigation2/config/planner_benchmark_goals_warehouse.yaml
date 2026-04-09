@@ -1,0 +1,58 @@
+# 地图对应：warehouse_aisles_01
+# 坐标系：map
+# 约定：
+# - 当 auto_spawn_from_goals=true 时，G01 作为机器人默认出生点。
+# - x/y 单位为米（m），yaw_rad 单位为弧度（rad）。
+benchmark_goals:
+  frame_id: map
+  points:
+    - goal_id: G01
+      scenario: aisle_left_south
+      x: -9.5
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G02
+      scenario: aisle_left_north
+      x: -9.5
+      y: 7.0
+      yaw_rad: 1.57
+    - goal_id: G03
+      scenario: aisle_midleft_south
+      x: -5.8
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G04
+      scenario: aisle_midleft_north
+      x: -5.8
+      y: 7.0
+      yaw_rad: 1.57
+    - goal_id: G05
+      scenario: center_gate_south
+      x: -0.6
+      y: -5.0
+      yaw_rad: 0.0
+    - goal_id: G06
+      scenario: center_gate_north
+      x: -0.6
+      y: 5.5
+      yaw_rad: 1.57
+    - goal_id: G07
+      scenario: aisle_midright_south
+      x: 3.8
+      y: -7.0
+      yaw_rad: 0.0
+    - goal_id: G08
+      scenario: aisle_midright_north
+      x: 3.8
+      y: 7.0
+      yaw_rad: 1.57
+    - goal_id: G09
+      scenario: aisle_right_south
+      x: 9.0
+      y: -6.5
+      yaw_rad: 3.14
+    - goal_id: G10
+      scenario: aisle_right_north
+      x: 9.0
+      y: 6.5
+      yaw_rad: -1.57
