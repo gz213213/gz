@@ -1,128 +1,250 @@
-# chapt8_ws 导航流程实战解析（基于当前项目）
+# chapt8_ws 项目总览与完整使用手册
 
-这份文档不是通用教程，而是按你当前工程配置整理的“能对上代码、能跑起来、能排障”的导航流程说明。
+本仓库是一个基于 ROS 2 Humble + Gazebo + Nav2 的移动机器人导航工作区。  
+它包含机器人建模、仿真启动、导航参数、自定义全局规划器、以及多环境评测脚本。
 
-## 1. 先看全链路（从目标点到车轮）
+如果你只想快速跑起来，先看第 4 节和第 5 节。  
+如果你要做论文实验，重点看第 6 节和第 7 节。
+
+## 1. 项目目标
+
+本项目当前主要服务两个方向：
+
+1. 搭建可稳定复现的室内导航仿真链路。
+2. 对比 `SmacPlanner2D`、`NavfnPlanner`、`CustomPlanner` 三种全局规划器表现。
+
+其中 `CustomPlanner` 已实现“清障项 + 中轴项 + 转向项 + 自适应权重”的总代价模型，用于多环境实验。
+
+## 2. 工作区结构
+
+`src/` 下的主要包如下：
+
+| 包名 | 作用 |
+| --- | --- |
+| `fishbot_description` | 机器人 URDF、Gazebo 插件、控制器参数、世界文件与仿真启动 |
+| `fishbot_navigation2` | Nav2 启动、地图、参数、行为树、评测配置 |
+| `nav2_custom_planner` | 自定义全局规划器插件（A* + 自适应代价） |
+| `nav2_custom_controller` | 自定义控制器插件（预留/扩展） |
+| `fishbot_application` | Python 应用脚本（初始化位姿、评测、汇总） |
+| `fishbot_application_cpp` | C++ 应用示例 |
+| `autopatrol_interfaces` | 巡检相关接口定义（srv） |
+| `autopatrol_robot` | 巡检应用包（预留/实验） |
+
+## 3. 导航链路（从目标到底盘）
 
 ```text
 RViz 2D Goal Pose
-  -> bt_navigator（行为树调度）
-  -> planner_server（SmacPlanner2D 生成全局路径）
-  -> smoother_server（SimpleSmoother 平滑路径）
-  -> controller_server（RPP 生成速度指令 cmd_vel_nav）
-  -> velocity_smoother（cmd_vel_nav -> /cmd_vel）
-  -> fishbot_diff_drive_controller（底盘执行）
+  -> bt_navigator
+  -> planner_server（Smac / Navfn / Custom）
+  -> smoother_server
+  -> controller_server（RPP）
+  -> velocity_smoother
+  -> /cmd_vel
+  -> fishbot_diff_drive_controller
   -> Gazebo 机器人运动
-  -> /odom + odom->base_footprint TF（里程计闭环）
-
-同时：
-map_server 发布静态地图
-amcl 消费 /scan + /tf + /odom，发布 map->odom TF（定位闭环）
-robot_state_publisher 发布 base_footprint->base_link->laser_link 等机体 TF
+  -> /odom + TF
 ```
 
-一句话理解：  
-导航是否能跑通，本质看两条闭环是否同时成立：
+并行定位链路：
+
+```text
+map_server -> amcl（scan + odom + tf）-> map->odom
+robot_state_publisher -> base_footprint->base_link->sensor links
+```
+
+判断系统是否正常，核心看两条闭环：
+
 - 定位闭环：`map -> odom -> base_footprint`
 - 控制闭环：`goal -> path -> cmd_vel -> odom`
 
-## 2. 你的项目里，谁负责什么
+## 4. 快速启动（基础导航）
 
-| 模块 | 文件 | 关键作用 |
-| --- | --- | --- |
-| Gazebo 启动 | `src/fishbot_description/launch/gazebo_sim.launch.py` | 启动仿真、加载机器人、按顺序激活控制器 |
-| 机器人模型 | `src/fishbot_description/urdf/fishbot/fishbot.urdf.xacro` | 组装底盘、轮子、激光、IMU、相机、Gazebo 插件 |
-| ros2_control 接入 | `src/fishbot_description/urdf/fishbot/fishbot.ros2_control.xacro` | 把 `/cmd_vel` 接到底盘控制器，输出 `/odom` |
-| 底盘控制参数 | `src/fishbot_description/config/fishbot_ros2_controller.yaml` | diff drive 轮距/轮径、速度加速度限幅、odom TF |
-| Nav2 启动入口 | `src/fishbot_navigation2/launch/navigation2.launch.py` | 传入地图和参数，include `nav2_bringup/bringup_launch.py` |
-| Nav2 参数 | `src/fishbot_navigation2/config/nav2_params.yaml` | AMCL / costmap / planner / controller / recovery 等核心配置 |
-| 稳定版行为树 | `src/fishbot_navigation2/behavior_trees/navigate_to_pose_stable.xml` | 低频重规划 + 先平滑后跟踪 + 温和恢复策略 |
-| 地图 | `src/fishbot_navigation2/maps/room.yaml` | 栅格地图、分辨率、原点 |
+### 4.1 编译
 
-## 3. 按时间顺序理解一次完整导航
-
-1. 启动 `gazebo_sim.launch.py`。  
-2. `robot_state_publisher` 发布机器人 TF 树（`base_footprint -> base_link -> laser_link ...`）。  
-3. 机器人实体被 `spawn_entity.py` 放入 Gazebo。  
-4. `controller_manager` 依次激活：  
-`fishbot_joint_state_broadcaster` -> `fishbot_diff_drive_controller`。  
-5. 底盘控制器开始接收 `/cmd_vel`、发布 `/odom` 与 `odom -> base_footprint` TF。  
-6. 启动 `navigation2.launch.py`，进入 Nav2 bringup：  
-`map_server + amcl + planner + smoother + controller + bt_navigator + velocity_smoother`。  
-7. AMCL 用 `map + /scan + /odom` 估计位姿，发布 `map -> odom` TF。  
-8. 在 RViz 下发目标后，BT 执行 `ComputePathToPose -> SmoothPath -> FollowPath`，速度链路输出到 `/cmd_vel`，机器人开始导航。
-
-## 4. 你这套参数为什么更稳（核心思路）
-
-- 规划层：`SmacPlanner2D`，`cost_travel_multiplier: 3.0`，更偏向远离高代价区，走廊更容易走中轴。  
-- 平滑层：BT 里显式 `SmoothPath`，减少折线轨迹导致的方向抖动。  
-- 控制层：`RPP`（Regulated Pure Pursuit）+ 低速参数（`desired_linear_vel: 0.10`），牺牲峰值速度换稳定性。  
-- 局部代价地图：`observation_persistence: 0.0`，减少“幽灵障碍”长期滞留。  
-- 恢复行为：先清图/后退/等待，再旋转，避免贴墙时越转越卡。  
-- 定位启动：AMCL `set_initial_pose: true`，减少刚启动时 `map->odom` 缺失导致“有路径但不动”。
-
-## 5. 运行与验证（建议按这个顺序）
-
-终端 1（仿真）：
 ```bash
 cd /home/guzhen/chapt8/chapt8_ws
 source /opt/ros/humble/setup.bash
-colcon build --packages-select fishbot_description fishbot_navigation2
+colcon build --packages-select \
+  fishbot_description fishbot_navigation2 nav2_custom_planner fishbot_application
 source install/setup.bash
+```
+
+### 4.2 启动仿真
+
+```bash
 ros2 launch fishbot_description gazebo_sim.launch.py
 ```
 
-终端 2（导航）：
+说明：
+
+- 默认 world：`fishbot_description/world/custom_room.world`
+- 启动文件会自动加载机器人并按顺序激活控制器：
+- `fishbot_joint_state_broadcaster`
+- `fishbot_diff_drive_controller`
+
+### 4.3 启动 Nav2
+
 ```bash
-cd /home/guzhen/chapt8/chapt8_ws
-source /opt/ros/humble/setup.bash
-source install/setup.bash
 ros2 launch fishbot_navigation2 navigation2.launch.py
 ```
 
-终端 3（检查链路）：
+启动后可在 RViz 用 `2D Goal Pose` 下发目标点。
+
+### 4.4 手动遥控（可选）
+
 ```bash
-source /opt/ros/humble/setup.bash
-source /home/guzhen/chapt8/chapt8_ws/install/setup.bash
-
-ros2 node list | rg "amcl|map_server|planner_server|controller_server|bt_navigator|velocity_smoother"
-ros2 topic list | rg "scan|odom|cmd_vel|tf"
-ros2 topic hz /scan
-ros2 topic hz /odom
-ros2 topic hz /cmd_vel
-ros2 topic echo /amcl_pose --once
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/cmd_vel
 ```
 
-## 6. 常见现象与定位顺序
+用于快速验证底盘控制链路是否正常。
 
-现象 1：RViz 里有全局路径，但机器人不动。  
-优先检查：
-- `fishbot_diff_drive_controller` 是否成功激活。  
-- `/cmd_vel` 是否有数据。  
-- `map->odom` 和 `odom->base_footprint` 是否连续。  
+## 5. 多环境场景切换
 
-现象 2：机器人在走廊里抖动、贴墙、反复恢复。  
-优先检查：
-- local costmap 是否出现噪声团块。  
-- 激光更新率和时间戳是否稳定。  
-- RPP 前视距离与速度上限是否匹配当前地图尺度。  
+项目已内置 benchmark 地图与对应 world，目录如下：
 
-现象 3：重启仿真后出现 TF 时间戳过早。  
-优先处理：
-- 关闭所有相关终端后整套重启。  
-- 确保全栈统一 `use_sim_time: true`。  
+- 地图：`src/fishbot_navigation2/maps/benchmark/`
+- 世界：`src/fishbot_description/world/benchmark/`
+- 标注：`src/fishbot_navigation2/maps/benchmark/MAP_LABELS.md`
+- 索引：`src/fishbot_navigation2/config/benchmark_map_registry.yaml`
 
-## 7. 当前工程里的一个注意点
+切换原则：
 
-`nav2_params.yaml` 中 `default_nav_to_pose_bt_xml` 目前写的是绝对路径：
+- `map_yaml`、`world_file`、`goals_yaml` 必须成对使用。
 
-```text
-/home/guzhen/chapt8/chapt8_ws/install/fishbot_navigation2/share/fishbot_navigation2/behavior_trees/navigate_to_pose_stable.xml
+示例（仓储场景）：
+
+```bash
+WORLD_FILE=/home/guzhen/chapt8/chapt8_ws/src/fishbot_description/world/benchmark/warehouse_aisles_01.world
+MAP_YAML=/home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/maps/benchmark/warehouse_aisles_01.yaml
+GOALS_YAML=/home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_goals_warehouse.yaml
 ```
 
-这在你当前机器可用，但如果仓库换路径或换电脑，可能找不到该文件。  
-若后续要跨机器复现，建议把这个路径改成可移植写法（比如在 launch 中按包路径拼接后传入）。
+然后分别启动：
 
-## 8. 扩展阅读
+```bash
+ros2 launch fishbot_description gazebo_sim.launch.py \
+  world:=$WORLD_FILE \
+  goals_yaml:=$GOALS_YAML \
+  auto_spawn_from_goals:=true
+```
 
-- 导航参数专题：`src/fishbot_navigation2/README.md`
+```bash
+ros2 launch fishbot_navigation2 navigation2.launch.py \
+  map:=$MAP_YAML \
+  params_file:=/home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/nav2_params_custom.yaml
+```
+
+`auto_spawn_from_goals:=true` 时，会自动读取 `goals_yaml` 的 `G01` 作为出生点。
+
+## 6. 三规划器对比评测
+
+### 6.1 规划器参数文件
+
+- Smac：`src/fishbot_navigation2/config/nav2_params_smac.yaml`
+- Navfn：`src/fishbot_navigation2/config/nav2_params_navfn.yaml`
+- Custom：`src/fishbot_navigation2/config/nav2_params_custom.yaml`
+
+### 6.2 运行评测脚本
+
+入口脚本：
+
+- `ros2 run fishbot_application planner_benchmark`
+- `ros2 run fishbot_application planner_benchmark_summary`
+
+单算法示例：
+
+```bash
+ros2 run fishbot_application planner_benchmark \
+  --goals-file $GOALS_YAML \
+  --output-csv /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_results.csv \
+  --planner-name CustomPlanner \
+  --runs 3 \
+  --timeout-s 180
+```
+
+三算法对比时建议：
+
+1. 第一种算法不加 `--append`（覆盖旧结果）。
+2. 后两种算法加 `--append`（追加写入同一个结果文件）。
+
+### 6.3 汇总统计
+
+```bash
+ros2 run fishbot_application planner_benchmark_summary \
+  --input-csv /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_results.csv \
+  --output-csv /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_summary.csv \
+  --output-md /home/guzhen/chapt8/chapt8_ws/src/fishbot_navigation2/config/planner_benchmark_summary.md \
+  --sort-by success
+```
+
+## 7. 数据文件说明
+
+输出文件位于 `src/fishbot_navigation2/config/`：
+
+- `planner_benchmark_results.csv`：原始样本（每次目标执行一行）
+- `planner_benchmark_summary.csv`：按算法聚合统计
+- `planner_benchmark_summary.md`：Markdown 表格版结果
+- `planner_benchmark_template.csv`：模板/手工记录辅助
+
+`results.csv` 的关键列：
+
+- `planner_name`
+- `run_id`
+- `goal_id`
+- `success`
+- `time_to_goal_s`
+- `stuck_or_not`
+- `wall_hugging_level`
+- `recovery_count`
+- `note`
+
+常见误解：
+
+- “为什么不是 10 行？”
+- 因为总样本数 = `目标点数 × runs × 算法数`。
+- 例如 `10` 点、`runs=3`、`3` 个算法，总行数是 `90`（不含表头）。
+
+## 8. CustomPlanner 说明
+
+`nav2_custom_planner` 中的 `CustomPlanner` 已在 A* 基础上加入：
+
+1. 安全距离代价 `C_clear`
+2. 中轴偏置代价 `C_middle`
+3. 转向代价 `C_turn`
+4. 自适应权重 `lambda_c / lambda_m / lambda_t`
+
+并采用方向增强状态，减少“只按 2D 闭集导致的转向代价路径依赖问题”。
+
+对应核心源码：
+
+- `src/nav2_custom_planner/include/nav2_custom_planner/nav2_custom_planner.hpp`
+- `src/nav2_custom_planner/src/nav2_custom_planner.cpp`
+
+## 9. 常见问题排查
+
+机器人不动：
+
+- 检查控制器是否激活：`fishbot_diff_drive_controller`
+- 检查 `/cmd_vel` 是否有数据
+- 检查 `map -> odom -> base_footprint` 是否连续
+
+开局倒地或卡在障碍里：
+
+- 使用 `goals_yaml + auto_spawn_from_goals:=true`
+- 或手动传 `spawn_x/spawn_y/spawn_yaw`
+
+切图后表现异常：
+
+- 多数是 `world/map/goals` 没有成对切换
+
+日志快速筛查：
+
+```bash
+rg -n "Failed to make progress|PlannerException|A\\*|timeout|recovery|TF_OLD_DATA" ~/.ros/log -g "*.log"
+```
+
+## 10. 推荐阅读
+
+- 导航与评测细节：`src/fishbot_navigation2/README.md`
+- 地图标签：`src/fishbot_navigation2/maps/benchmark/MAP_LABELS.md`
+- 地图索引：`src/fishbot_navigation2/config/benchmark_map_registry.yaml`
